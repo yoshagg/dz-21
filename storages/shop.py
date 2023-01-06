@@ -18,8 +18,8 @@ class Shop:
         try:
             if count <= Shop.capacity:
                 Shop.items[name] -= count
-                if Storage.items[name] <= 0:
-                    del Storage.items[name]
+                if Shop.items[name] <= 0:
+                    del Shop.items[name]
             else:
                 return "Вы не можете сделать вместимость меньше нуля"
         except Exception as e:

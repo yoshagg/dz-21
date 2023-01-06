@@ -39,4 +39,3 @@ class Store:
         for k in Store.get_items().keys():
             items_list.append(k)
         return len(set(items_list))
-

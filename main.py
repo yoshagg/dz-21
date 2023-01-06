@@ -31,16 +31,15 @@ def main():
         elif request.designation == storages[2]:
             Store.add(request.item, request.amount)
 
-        if request.departure == storages[0]:
-            Storage.remove(request.item, request.amount)
+        if request.departure is not None:
+            if request.departure == storages[0]:
+                Storage.remove(request.item, request.amount)
 
-        elif request.departure == storages[1]:
-            Shop.remove(request.item, request.amount)
+            elif request.departure == storages[1]:
+                Shop.remove(request.item, request.amount)
 
-        elif request.departure == storages[2]:
-            Store.remove(request.item, request.amount)
-
-
+            elif request.departure == storages[2]:
+                Store.remove(request.item, request.amount)
 
 
 if __name__ == "__main__":

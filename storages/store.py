@@ -24,7 +24,7 @@ class Store:
             else:
                 return "Вы не можете сделать вместимость меньше нуля"
         except Exception as e:
-            print(e)
+            return e
 
 
     @staticmethod

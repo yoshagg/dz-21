@@ -19,8 +19,8 @@ class Store:
         try:
             if count <= Store.capacity:
                Store.items[name] -= count
-               if Storage.items[name] <= 0:
-                    del Storage.items[name]
+               if Store.items[name] <= 0:
+                    del Store.items[name]
             else:
                 return "Вы не можете сделать вместимость меньше нуля"
         except Exception as e:

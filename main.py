@@ -7,12 +7,15 @@ storages = ["склад", "магазин", "магазин_2"]
 
 
 def main():
+    storage_exemp = Storage()
+    store_exemp = Store()
+    shop_exemp = Shop()
     print("Программа: Добрый день!\n")
 
     while True:
-        print(f"""Программа: В {storages[0]} хранится: {Storage.get_items()}""")
-        print(f"""Программа: В {storages[1]} хранится: {Shop.get_items()}""")
-        print(f"""Программа: В {storages[2]} хранится: {Store.get_items()}""")
+        print(f"""Программа: В {storages[0]} хранится: {storage_exemp.get_items()}""")
+        print(f"""Программа: В {storages[1]} хранится: {store_exemp.get_items()}""")
+        print(f"""Программа: В {storages[2]} хранится: {shop_exemp.get_items()}""")
 
         user_request = input(f"""Введите запрос в формате: Доставить 3 печенька из склад в магазин/магазин_2\n"""
                              """Или введите "stop" или "стоп", чтобы закончить\n / """).lower()

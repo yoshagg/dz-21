@@ -1,41 +1,21 @@
-class Shop:
-    items = {}
-    capacity = 20
+from storages.base_storage import BaseStorage
 
-    @staticmethod
-    def add(name, count):
-        try:
-            if Shop.capacity > 0 and count <= Shop.capacity:
-                Shop.items[name] = count
-                Shop.capacity -= count
-            else:
-                return "Недостаточно места"
-        except Exception as e:
-            return e
 
-    @staticmethod
-    def remove(name, count):
-        try:
-            if count <= Shop.capacity:
-                Shop.items[name] -= count
-                if Shop.items[name] <= 0:
-                    del Shop.items[name]
-            else:
-                return "Вы не можете сделать вместимость меньше нуля"
-        except Exception as e:
-            print(e)
+class Shop(BaseStorage):
+    def __init__(self):
+        self.shop = BaseStorage(items={}, capacity=20)
 
-    @staticmethod
-    def get_free_space():
-        return Shop.capacity
+    def add(self, name, count):
+        self.shop.add()
 
-    @staticmethod
-    def get_items():
-        return Shop.items
+    def remove(self, name, count):
+        self.shop.remove()
 
-    @staticmethod
-    def get_unique_items_count():
-        items_list = []
-        for k in Shop.get_items().keys():
-            items_list.append(k)
-        return len(set(items_list))
+    def get_items(self):
+        self.shop.get_items()
+
+    def get_free_space(self):
+        self.shop.get_free_space()
+
+    def get_unique_items_count(self):
+        self.shop.get_unique_items_count()

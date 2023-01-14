@@ -27,11 +27,6 @@ class Storage(ABC):
     def get_unique_items_count(self):
         pass
 
-    @property
-    @abstractmethod
-    def item_in(self):
-        pass
-
 
 class BaseStorage(Storage):
     def __init__(self, items, capacity):
